@@ -2,44 +2,90 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ECE8E8"
+    android:scrollbarThumbHorizontal="@drawable/ic_launcher_background"
     tools:context=".MainActivity">
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textHeading"
+        style="@style/HeadText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:text="Hello"
+        android:layout_marginTop="80dp"
+        android:text="Заказать звонок"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        android:id="@+id/telephone"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="Телефон"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name">
+
+    </com.google.android.material.textfield.MaterialAutoCompleteTextView>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="50dp"
+        android:text="Ваше имя"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHeading">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/send"
+        style="@style/MyAppButton"
+        android:background="@drawable/button_drawable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:shadowColor="@color/teal_200"
-        android:text="Вход"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:rippleColor="@color/white"
-        app:strokeColor="@color/purple_200"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginBottom="156dp"
+        android:text="Отправить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telephone" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+
+        android:id="@+id/materialCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.material.checkbox.MaterialCheckBox>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textConsent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:text="Buy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2" />
+        android:layout_marginStart="15dp"
+        android:text="Согласие на обработку персональных данных"
+        app:layout_constraintBottom_toBottomOf="@+id/materialCheckBox"
+        app:layout_constraintStart_toEndOf="@+id/materialCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/materialCheckBox" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
